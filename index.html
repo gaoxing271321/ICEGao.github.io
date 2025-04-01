@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>神秘的信</title>
+    <title>信</title>
     <style>
         body {
             background-color: white;
@@ -42,36 +43,39 @@
         .open-button:hover {
             background-color: #0056b3;
         }
+        #video {
+            display: none; /* 初始隐藏视频 */
+        }
     </style>
 </head>
 <body>
-    <div class="letter-container">
+    <div class="letter-container" id="letterContainer">
         <div class="letter-title">神秘的信件</div>
         <div class="letter-text">
-            是什么东西呢...思考
+            思考...这是什么
         </div>
         <button class="open-button" onclick="openLetter()">点击打开</button>
     </div>
-
-    <video id="video" width="640" height="360" style="display:none;" controls>
+    <video id="video" width="640" height="360" controls>
         <source src="https://vdse.bdstatic.com/192d9a98d782d9c74c96f09db9378d93.mp4" type="video/mp4">
         您的浏览器不支持HTML5视频标签。
     </video>
-
     <script>
-    function openLetter() {
-        document.title = "愚人节快乐";
-        alert("你被骗了LOL");
+        function openLetter() {
+            document.title = "愚人节快乐";
+            // 使用自定义的alert样式需要额外代码，这里为了简化使用原生的alert
+            // 如果需要自定义样式，可以考虑使用模态框（modal）或其他HTML元素模拟alert效果
+            alert("你被骗了LOL"); // 显示浅绿色标题的模拟（实际为alert框）
 
-        // 隐藏信件界面
-        var letterContainer = document.getElementById("letterContainer");
-        letterContainer.style.display = "none";
+            // 隐藏信件界面
+            var letterContainer = document.getElementById("letterContainer");
+            letterContainer.style.display = "none";
 
-        // 显示并播放视频
-        var video = document.getElementById("video");
-        video.style.display = "block";
-        video.play();
-    }
+            // 显示视频
+            var video = document.getElementById("video");
+            video.style.display = "block";
+            video.play(); // 自动播放视频（注意：某些浏览器可能因自动播放策略而阻止此行为）
+        }
     </script>
 </body>
 </html>
