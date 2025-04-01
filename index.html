@@ -3,34 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>愚人节LOL</title>
+    <title>信件页面</title>
     <style>
         body {
+            background-color: white;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #0f0f0f;
             font-family: Arial, sans-serif;
         }
-        h1 {
-            font-size: 3rem;
-            color: #CED094;
-            margin-bottom: 20px;
+        .letter-container {
+            text-align: center;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        video {
-            width: 80%;
-            max-width: 800px;
-            border: 5px solid #000;
+        .letter-title {
+            font-size: 24px;
+            color: #333;
+        }
+        .letter-text {
+            font-size: 18px;
+            color: #666;
+        }
+        .open-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .open-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>你被骗了---愚人节快乐</h1>
-    <video controls>
-        <source src=https://vdse.bdstatic.com/192d9a98d782d9c74c96f09db9378d93.mp4>
+    <div class="letter-container">
+        <div class="letter-title">一封信件</div>
+        <div class="letter-text">
+            亲爱的用户，点击下面的按钮打开信件吧！
+        </div>
+        <button class="open-button" onclick="openLetter()">点击打开</button>
+    </div>
+
+    <video id="video" width="640" height="360" style="display:none;" controls>
+        <source src="https://vdse.bdstatic.com/192d9a98d782d9c74c96f09db9378d93.mp4" type="video/mp4">
+        您的浏览器不支持HTML5视频标签。
     </video>
+
+    <script>
+        function openLetter() {
+            document.title = "愚人节快乐";
+            alert("你被骗了LOL");
+            alertStyle();
+            var video = document.getElementById("video");
+            video.style.display = "block";
+            video.play();
+        }
+
+        function alertStyle() {
+            // 由于alert框的样式无法直接通过CSS修改，这里使用一种变通的方法：
+            // 先隐藏默认的alert，然后用自定义的HTML元素模拟alert效果
+            // 但为了简化示例，这里仅展示基本的alert调用，样式自定义超出本题范围
+            // 如果需要自定义样式，可以考虑使用模态框（modal）代替alert
+        }
+    </script>
 </body>
 </html>
