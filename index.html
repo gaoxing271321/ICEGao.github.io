@@ -59,14 +59,21 @@
     </video>
 
     <script>
-        function openLetter() {
-            document.title = "愚人节快乐";
-            alert("你被骗了LOL");
-            alertStyle();
-            var video = document.getElementById("video");
-            video.style.display = "block";
-            video.play();
-        }
+    function openLetter() {
+        document.title = "愚人节快乐";
+        alert("你被骗了LOL");
+
+        // 隐藏信件界面
+        var letterContainer = document.getElementById("letterContainer");
+        letterContainer.style.display = "none";
+
+        // 显示并播放视频
+        var video = document.getElementById("video");
+        video.style.display = "block";
+        video.play();
+    }
+    </script>
+
 
         function alertStyle() {
             // 由于alert框的样式无法直接通过CSS修改，这里使用一种变通的方法：
